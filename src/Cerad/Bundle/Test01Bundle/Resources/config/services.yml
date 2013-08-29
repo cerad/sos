@@ -1,0 +1,7 @@
+parameters:
+#    cerad_test01.example.class: Cerad\Bundle\Test01Bundle\Example
+
+services:
+#    cerad_test01.example:
+#        class: %cerad_test01.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

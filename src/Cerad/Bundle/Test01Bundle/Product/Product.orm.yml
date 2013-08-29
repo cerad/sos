@@ -1,0 +1,15 @@
+Cerad\Bundle\Test01Bundle\Product\Product:
+    type:  entity
+    table: products
+    
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+                       
+    fields:
+        name:
+            type:     string
+            length:   20
+            nullable: false
+           

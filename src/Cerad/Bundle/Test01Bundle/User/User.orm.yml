@@ -1,0 +1,16 @@
+Cerad\Bundle\Test01Bundle\User\User:
+    type:  entity
+    table: users
+    
+    id:
+        id:
+            type:   string
+            length: 40
+            generator: { strategy: NONE }
+                       
+    fields:
+        name:
+            type:     string
+            length:   20
+            nullable: false
+           

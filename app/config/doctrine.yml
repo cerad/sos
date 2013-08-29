@@ -1,0 +1,52 @@
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        default_connection: default
+        connections:
+            default:
+                driver:   %database_driver%
+                host:     %database_host%
+                port:     %database_port%
+                dbname:   %database_name%
+                user:     %database_user%
+                password: %database_password%
+                charset:  UTF8
+                
+            test01:
+                driver:   %database_driver%
+                host:     %database_host%
+                port:     %database_port%
+                dbname:   test01
+                user:     %database_user%
+                password: %database_password%
+                charset:  UTF8
+
+    orm:
+        default_entity_manager:       default
+        auto_generate_proxy_classes: %kernel.debug%
+                
+        entity_managers:
+          
+            default:
+                connection: default
+                mappings:
+
+            test01:
+                connection: test01
+                mappings:
+                  product:
+                    type:      yml
+                    dir:       %kernel.root_dir%/../src/Cerad/Bundle/Test01Bundle/Product
+                    prefix:    Cerad\Bundle\Test01Bundle\Product
+                    alias:     Product
+                    is_bundle: false
+                  user:
+                    type:      yml
+                    dir:       %kernel.root_dir%/../src/Cerad/Bundle/Test01Bundle/User
+                    prefix:    Cerad\Bundle\Test01Bundle\User
+                    alias:     User
+                    is_bundle: false
+                    
+                
+                       

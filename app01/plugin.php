@@ -23,21 +23,18 @@ class UserController
     public function delete(){
         echo "Removing User...<br>";
     }
-    public function __callx($name,$args)
-    {
-        $namex = $name .= 'x';
-        if (property_exists($this, $namex)) 
-        {
-            return $this->$namex();
+    public function searchx(){
+        echo "Overridden? Nope...<br>";
+    }
+    public function __call($method, $params){
+        if(property_exists($this,$method)){
+            $method = $this->$method;
+            $method($params);
         }
     }
 }  
 class UserSearchPlugin
 {
-    public function invoke()
-    {
-        echo "Searching User....<br>\n";
-    }
     public function __invoke()
     {
         echo "Searching User....<br>\n";
